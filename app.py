@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
-import json
+from config import GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
+
 
 app = Flask(__name__)
 
 gauth = GoogleAuth()
 
-gauth.LoadClientConfigFile("C:\\Users\\Saiteja\\Downloads\\client_secrets.json")  # Load credentials from JSON
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
 
 drive = GoogleDrive(gauth)
@@ -42,26 +42,27 @@ if __name__ == "__main__":
 
 
 
+
+
+
+
+
+
+
+
+
 # from flask import Flask, render_template, request
 # from pydrive2.auth import GoogleAuth
 # from pydrive2.drive import GoogleDrive
+# import json
 
 # app = Flask(__name__)
 
 # gauth = GoogleAuth()
-# client_secrets = {
-#     "web":{"client_id":"285465957506-g39tkiqoaded2ik946vtu486u5icckpr.apps.googleusercontent.com",
-#            "project_id":"server-450111",
-#            "auth_uri":"https://accounts.google.com/o/oauth2/auth",
-#            "token_uri":"https://oauth2.googleapis.com/token",
-#            "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-#            "client_secret":"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",
-#            "redirect_uris":["http://localhost:8090/","http://127.0.0.1:5000","https://flask-feb7.vercel.app/"],
-#            "javascript_origins":["http://localhost:8090"]}}
 
+# gauth.LoadClientConfigFile("C:\\Users\\Saiteja\\Downloads\\client_secrets.json")  # Load credentials from JSON
 # SCOPES = ['https://www.googleapis.com/auth/drive.file']
 
-# #gauth.LocalWebserverAuth()
 # drive = GoogleDrive(gauth)
 
 # @app.route("/")
@@ -78,36 +79,19 @@ if __name__ == "__main__":
 #         return "No selected file"
 
 #     gfile = drive.CreateFile({'title': file.filename})
-#     gfile.SetContentString(file.read().decode("latin-1"))  # Adjust encoding if needed
+#     gfile.SetContentString(file.read().decode("latin-1"))  
 #     gfile.Upload()
 
 #     return "File uploaded successfully to Google Drive!"
 
-
 # if __name__ == "__main__":
-#     #app.run(debug=False)
-#       app.run( debug=True)
+#     app.run(debug=True)
+ 
 
 
 
 
 
 
-
-
-
-
-# from pydrive.auth import GoogleAuth
-# from pydrive.drive import GoogleDrive
-
-# # Authenticate and create the PyDrive client.
-# gauth = GoogleAuth()
-# gauth.LocalWebserverAuth()  # Creates local webserver and automatically handles authentication.
-# drive = GoogleDrive(gauth)
-
-# # Create a file and upload it.
-# file1 = drive.CreateFile({'title': 'Hello.txt'})  # Create a file with the title 'Hello.txt'.
-# file1.Upload()  # Upload the file.
-# print('File uploaded to Google Drive')
 
 
