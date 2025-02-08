@@ -5,17 +5,6 @@ from pydrive2.drive import GoogleDrive
 app = Flask(__name__)
 
 gauth = GoogleAuth()
-client_secrets = {
-    "web":{"client_id":"285465957506-g39tkiqoaded2ik946vtu486u5icckpr.apps.googleusercontent.com",
-           "project_id":"server-450111",
-           "auth_uri":"https://accounts.google.com/o/oauth2/auth",
-           "token_uri":"https://oauth2.googleapis.com/token",
-           "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-           "client_secret":"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",
-           "redirect_uris":["http://localhost:8090/","http://127.0.0.1:5000","https://flask-feb7.vercel.app/"],
-           "javascript_origins":["http://localhost:8090"]}}
-
-SCOPES = ['https://www.googleapis.com/auth/drive.file']
 
 #gauth.LocalWebserverAuth()
 drive = GoogleDrive(gauth)
